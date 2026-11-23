@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BESTCINE — Central Oficial de Downloads</title>
+  <meta name="description" content="Baixe o aplicativo oficial do BestCine para Windows PC, Celular Android, Mi Box, TV Box, Fire TV, Google TV, Smart TV Samsung e Smart TV LG." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brand-blue: #2563eb;
+      --brand-electric: #3b82f6;
+      --brand-sky: #60a5fa;
+      --bg-deep: #03050a;
+      --bg-base: #04060c;
+      --text: #f3f4f6;
+      --muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #04060c; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 9999px; border: 2px solid #04060c; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    html { scrollbar-width: thin; scrollbar-color: #1e293b #04060c; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(16, 36, 77, 0.55) 0%, transparent 62%),
+        radial-gradient(circle at 85% 22%, rgba(37, 99, 235, 0.14) 0%, transparent 55%),
+        #03050a;
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    /* Subtle grid overlay + particles canvas (mesmo estilo do site oficial) */
+    .grid-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    }
+
+    #particles-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Glass panels oficiais BestCine */
+    .glass-panel {
+      background: rgba(10, 15, 30, 0.78);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .glass-panel-gold {
+      background: linear-gradient(135deg, rgba(10, 18, 36, 0.90) 0%, rgba(4, 7, 16, 0.95) 100%);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      box-shadow: 0 0 50px -12px rgba(37, 99, 235, 0.22), 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 32%, #60a5fa 72%, #2563eb 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .shimmer-btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer-btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.32), transparent);
+      transform: rotate(25deg);
+      animation: shimmer 4.5s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shimmer {
+      0% { left: -60%; }
+      22% { left: 145%; }
+      100% { left: 145%; }
+    }
+
+    /* Navbar oficial */
+    .navbar {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 22px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .brand-logo-wrap {
+      position: relative;
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-glow {
+      position: absolute;
+      inset: -3px;
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      border-radius: 15px;
+      filter: blur(6px);
+      opacity: 0.65;
+    }
+
+    .brand-logo {
+      position: relative;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: rgba(0, 0, 0, 0.65);
+      padding: 2px;
+      border: 1px solid rgba(59, 130, 246, 0.45);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      display: block;
+    }
+
+    .brand-tag {
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(96, 165, 250, 0.85);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .discord-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 14px 7px 8px;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, rgba(88, 101, 242, 0.28), rgba(88, 101, 242, 0.12));
+      border: 1px solid rgba(88, 101, 242, 0.55);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      backdrop-filter: blur(12px);
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .discord-pill:hover, .discord-pill:focus-visible {
+      border-color: #818cf8;
+      box-shadow: 0 6px 24px rgba(88, 101, 242, 0.35);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .discord-circle {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #5865F2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 10px rgba(88, 101, 242, 0.5);
+    }
+
+    .ver-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      background: rgba(37, 99, 235, 0.16);
+      border: 1px solid rgba(59, 130, 246, 0.38);
+      color: #93c5fd;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 10px #34d399;
+    }
+
+    /* Main container */
+    main {
+      position: relative;
+      z-index: 10;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 8px 20px 64px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 15px;
+      border-radius: 9999px;
+      background: rgba(37, 99, 235, 0.14);
+      border: 1px solid rgba(96, 165, 250, 0.30);
+      color: #93c5fd;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 4.4vw, 3.1rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.12;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: clamp(0.98rem, 2vw, 1.12rem);
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    .hero p strong { color: #e2e8f0; }
+
+    /* Rule bar */
+    .rule-bar {
+      border-radius: 16px;
+      padding: 14px 20px;
+      margin-bottom: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 24px;
+      font-size: 0.9rem;
+      color: #dbeafe;
+    }
+
+    .rule-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    /* Device Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      border-radius: 22px;
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(59, 130, 246, 0.55);
+      box-shadow: 0 0 40px -12px rgba(37, 99, 235, 0.30), 0 20px 44px -14px rgba(0, 0, 0, 0.85);
+      transform: translateY(-2px);
+    }
+
+    .card.full { grid-column: 1 / -1; }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .icon-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.26), rgba(37, 99, 235, 0.08));
+      border: 1px solid rgba(59, 130, 246, 0.38);
+      color: #60a5fa;
+    }
+
+    .icon-badge.green {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(16, 185, 129, 0.08));
+      border-color: rgba(52, 211, 153, 0.38);
+      color: #34d399;
+    }
+
+    .icon-badge.violet {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.28), rgba(139, 92, 246, 0.08));
+      border-color: rgba(167, 139, 250, 0.42);
+      color: #a78bfa;
+    }
+
+    .icon-badge.rose {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.24), rgba(244, 63, 94, 0.08));
+      border-color: rgba(251, 113, 133, 0.38);
+      color: #fb7185;
+    }
+
+    .card-title {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .card-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .desc {
+      font-size: 0.91rem;
+      color: #cbd5e1;
+    }
+
+    .alert {
+      padding: 10px 13px;
+      border-radius: 12px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      line-height: 1.42;
+    }
+
+    .alert.danger {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.38);
+      color: #fca5a5;
+    }
+
+    .alert.success {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #6ee7b7;
+    }
+
+    .spacer { flex: 1; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      text-decoration: none;
+      color: #ffffff;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      border: 1px solid rgba(96, 165, 250, 0.45);
+      box-shadow: 0 10px 25px -6px rgba(37, 99, 235, 0.48);
+      cursor: pointer;
+      transition: transform 0.14s ease, filter 0.14s ease, box-shadow 0.14s ease;
+      text-align: center;
+    }
+
+    .btn:hover, .btn:focus-visible {
+      filter: brightness(1.12);
+      transform: translateY(-1px);
+      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.45), 0 12px 28px -6px rgba(37, 99, 235, 0.65);
+      outline: none;
+    }
+
+    .btn.green {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-color: rgba(110, 231, 183, 0.42);
+      box-shadow: 0 10px 25px -6px rgba(16, 185, 129, 0.42);
+    }
+
+    .btn.violet {
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      border-color: rgba(196, 181, 253, 0.42);
+      box-shadow: 0 10px 25px -6px rgba(124, 58, 237, 0.46);
+    }
+
+    .btn.ghost {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: none;
+      color: #e2e8f0;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 11px 14px;
+    }
+
+    .btn.ghost:hover, .btn.ghost:focus-visible {
+      background: rgba(255, 255, 255, 0.10);
+      border-color: rgba(96, 165, 250, 0.65);
+    }
+
+    .sub-link {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .sub-link a {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+
+    .sub-link a:hover { color: #ffffff; }
+
+    /* Samsung model tiles */
+    .samsung-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .sam-tile {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 15px 16px;
+      border-radius: 15px;
+      background: rgba(37, 99, 235, 0.10);
+      border: 1px solid rgba(59, 130, 246, 0.30);
+      text-decoration: none;
+      color: #fff;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.14s ease, box-shadow 0.15s ease;
+    }
+
+    .sam-tile:hover, .sam-tile:focus-visible {
+      background: rgba(37, 99, 235, 0.25);
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.35);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .sam-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sam-models {
+      font-size: 0.80rem;
+      color: #cbd5e1;
+    }
+
+    .sam-meta {
+      margin-top: 6px;
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #93c5fd;
+      background: rgba(37, 99, 235, 0.22);
+      border: 1px solid rgba(96, 165, 250, 0.28);
+      padding: 2px 9px;
+      border-radius: 9999px;
+    }
+
+    /* LG Copy box */
+    .copy-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      background: rgba(2, 6, 23, 0.72);
+      border: 1px solid rgba(59, 130, 246, 0.28);
+      border-radius: 14px;
+      padding: 10px 14px;
+    }
+
+    .copy-url {
+      flex: 1 1 260px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.82rem;
+      color: #93c5fd;
+      word-break: break-all;
+      user-select: all;
+    }
+
+    .copy-btn {
+      padding: 9px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(96, 165, 250, 0.5);
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.84rem;
+      cursor: pointer;
+      transition: filter 0.15s ease, transform 0.12s ease;
+    }
+
+    .copy-btn:hover, .copy-btn:focus-visible {
+      filter: brightness(1.15);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .lg-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    /* How to login */
+    .howto {
+      border-radius: 20px;
+      padding: 22px 24px;
+      margin-top: 8px;
+    }
+
+    .howto h2 {
+      font-size: 1.12rem;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .step {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      background: rgba(37, 99, 235, 0.25);
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      color: #93c5fd;
+      font-weight: 800;
+      font-size: 0.8rem;
+      margin-right: 8px;
+    }
+
+    /* Toast oficial */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 50;
+      display: none;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(59, 130, 246, 0.45);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    #toast.show { display: flex; }
+
+    .toast-ico {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(37, 99, 235, 0.22);
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    footer {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 18px 20px 36px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+  <canvas id="particles-bg"></canvas>
+
+  <!-- Toast oficial BestCine -->
+  <div id="toast" class="glass-panel">
+    <div class="toast-ico">✨</div>
+    <div>
+      <div style="font-weight:800;font-size:0.88rem;color:#fff;">Link Copiado com Sucesso!</div>
+      <div style="font-size:0.78rem;color:#94a3b8;">Cole em <strong>Settings › Repositories</strong> no Homebrew Channel da TV LG.</div>
+    </div>
+  </div>
+
+  <!-- Navbar oficial -->
+  <header class="navbar">
+    <a class="brand" href="#topo" id="topo">
+      <div class="brand-logo-wrap">
+        <div class="brand-logo-glow"></div>
+        <img src="logo.png" alt="BestCine Logo" class="brand-logo" />
+      </div>
+      <div>
+        <span class="font-display brand-name gold-gradient-text">BESTCINE</span>
+        <span class="brand-tag">Aplicativos Oficiais</span>
+      </div>
+    </a>
+
+    <div class="nav-actions">
+      <span class="ver-pill" id="ver-badge">
+        <span class="pulse-dot"></span>
+        <span>Versão v1.1.4</span>
+      </span>
+      <a class="discord-pill" href="https://dsc.gg/bestcine" target="_blank" rel="noopener noreferrer">
+        <span class="discord-circle">
+          <svg width="14" height="14" viewBox="0 0 127.14 96.36" fill="#fff" aria-hidden="true">
+            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+          </svg>
+        </span>
+        <span>Comunidade Discord</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-eyebrow">⚡ Download Direto · 1 Clique · Sem Complicação</div>
+      <h1 class="font-display">Escolha o seu aparelho e <span class="gold-gradient-text">baixe o BestCine</span></h1>
+      <p>
+        Filmes, séries, TV ao Vivo com favoritos, legendas automáticas e DNS Anti-Bloqueio.
+        <strong>Basta clicar no botão do seu aparelho abaixo.</strong>
+      </p>
+    </section>
+
+    <div class="rule-bar glass-panel-gold">
+      <span class="rule-item">📱 <span><b>Celular / Tablet</b> usa toque na tela</span></span>
+      <span class="rule-item">📺 <span><b>Mi Box / TV Box / Fire TV / Google TV / Samsung / LG</b> usa controle remoto</span></span>
+    </div>
+
+    <div class="grid">
+      <!-- 1. WINDOWS PC -->
+      <section class="card glass-panel">
+        <div class="card-top">
+          <div class="icon-badge">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <div class="font-display card-title">Windows PC</div>
+            <div class="card-sub">Computador ou Notebook (Windows 10 / 11)</div>
+          </div>
+        </div>
+        <p class="desc">
+          Aplicativo oficial para Windows 64-bit com TV ao Vivo, Picture-in-Picture, DNS Cloudflare DoH e atualização automática.
+        </p>
+        <div class="spacer"></div>
+        <a id="dl-win" class="btn shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.4/BestCine-Windows-x64-1.1.4.msi">
+          ⬇️ Baixar para Windows (.msi)
+        </a>
+        <div class="sub-link">Abra o arquivo baixado e clique em <b>Instalar</b>.</div>
+      </section>
+
+      <!-- 2. CELULAR ANDROID -->
+      <section class="card glass-panel">
+        <div class="card-top">
+          <div class="icon-badge green">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <div>
+            <div class="font-display card-title">Celular ou Tablet Android</div>
+            <div class="card-sub">Smartphones e Tablets (toque na tela)</div>
+          </div>
+        </div>
+        <div class="alert danger">
+          ⚠️ NÃO instale esta versão em Mi Box, TV Box, Fire TV ou Google TV — use o botão de TV ao lado!
+        </div>
+        <div class="spacer"></div>
+        <a id="dl-mob-arm64" class="btn green shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.4/BestCine-Android-arm64-v8a-1.1.4.apk">
+          ⬇️ Baixar para Celular Android (.apk)
+        </a>
+        <div class="sub-link">
+          Celular antigo e deu erro ao instalar?
+          <a id="dl-mob-univ" href="https://github.com/BestCine/BestCine/releases/download/v1.1.4/BestCine-Android-universal-1.1.4.apk">Baixar APK Universal</a>
+        </div>
+      </section>
+
+      <!-- 3. ANDROID TV / GOOGLE TV / MI BOX / FIRE TV -->
+      <section class="card glass-panel-gold">
+        <div class="card-top">
+          <div class="icon-badge violet">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
+          </div>
+          <div>
+            <div class="font-display card-title">TV Box · Mi Box · Fire TV · Google TV</div>
+            <div class="card-sub">TCL (C6K+), Philips, Sony, Philco, Xiaomi, Chromecast…</div>
+          </div>
+        </div>
+        <div class="alert success">
+          ✅ Versão nativa 60 FPS feita para <b>controle remoto</b> + login por QR Code sem digitar senha!
+        </div>
+        <div class="spacer"></div>
+        <a id="dl-tv-armv7" class="btn violet shimmer-btn" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.4/BestCineTV-1.1.4-android-lite-armv7.apk">
+          ⬇️ Baixar para TV / TV Box / Fire TV (.apk)
+        </a>
+        <div class="sub-link">
+          Funciona em 99% das TVs e Boxes. (Opcional 64-bit:
+          <a id="dl-tv-arm64" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.4/BestCineTV-1.1.4-android-lite-arm64.apk">arm64</a>)
+        </div>
+      </section>
+
+      <!-- 4. SAMSUNG TIZEN -->
+      <section class="card glass-panel full">
+        <div class="card-top">
+          <div class="icon-badge">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          </div>
+          <div>
+            <div class="font-display card-title">Smart TV Samsung (Sistema Tizen)</div>
+            <div class="card-sub">Envie o arquivo escolhido para a TV usando o Apps2Samsung</div>
+          </div>
+        </div>
+        <div class="alert danger">
+          ⚠️ ATENÇÃO: NÃO olhe o ano em que você comprou a TV! Veja as <b>LETRAS DO MODELO</b> na etiqueta atrás da TV (ou <i>Configurações › Suporte › Sobre esta TV</i>). Exemplo: <code>UN55<b>AU</b>8000</code> → clique em <b>AU</b>:
+        </div>
+        <div class="samsung-grid">
+          <a id="dl-sam-40" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.4/BestCineTV-1.1.4-NuvioTpk40.tpk">
+            <span class="sam-title">⬇️ Modelos NU / RU / TU</span>
+            <span class="sam-models">Ex.: NU7100, RU7100, TU7000, TU8000</span>
+            <span class="sam-meta">Tizen 4.0 – 5.5 · Linha 2018–2020</span>
+          </a>
+          <a id="dl-sam-60" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.4/BestCineTV-1.1.4-NuvioTpk60.tpk">
+            <span class="sam-title">⬇️ Modelos AU / Q60A–Q80A</span>
+            <span class="sam-models">Ex.: AU7700, AU8000, Q60A, Q70A</span>
+            <span class="sam-meta">Tizen 6.0 · Linha 2021</span>
+          </a>
+          <a id="dl-sam-65" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.4/BestCineTV-1.1.4-NuvioTpk65.tpk">
+            <span class="sam-title">⬇️ Modelos BU / CU / Q60B–C</span>
+            <span class="sam-models">Ex.: BU8000, CU7700, CU8000</span>
+            <span class="sam-meta">Tizen 6.5 – 7.0 · Linha 2022–2023</span>
+          </a>
+          <a id="dl-sam-80" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.4/BestCineTV-1.1.4-NuvioTpk.tpk">
+            <span class="sam-title">⬇️ Modelos DU / 2024+</span>
+            <span class="sam-models">Ex.: DU7700, DU8000, Q60D, S90D</span>
+            <span class="sam-meta">Tizen 8.0 – 9.0 · Linha 2024+</span>
+          </a>
+        </div>
+        <div class="sub-link">
+          Instale com o <a href="https://github.com/Apps2Samsung/Apps2Samsung" target="_blank" rel="noopener">Apps2Samsung</a> ·
+          Se aparecer <code>TypeLoadException</code>, basta escolher a letra certa acima ·
+          <a id="dl-sam-wgt" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.4/BestCineTV-1.1.4-tizen.wgt">Alternativa WebAssembly (.wgt)</a>
+        </div>
+      </section>
+
+      <!-- 5. LG WEBOS -->
+      <section class="card glass-panel full">
+        <div class="card-top">
+          <div class="icon-badge rose">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><circle cx="12" cy="11" r="3"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          </div>
+          <div>
+            <div class="font-display card-title">Smart TV LG (Sistema webOS 3+)</div>
+            <div class="card-sub">Recomendado: instalar pelo Homebrew Channel para atualizar sozinho</div>
+          </div>
+        </div>
+        <p class="desc">
+          <strong>Jeito mais fácil (Homebrew Channel):</strong> abra o Homebrew Channel na TV LG › <em>Settings › Repositories</em> › adicione o link abaixo e instale o <strong>BestCine TV</strong>:
+        </p>
+        <div class="copy-box">
+          <span class="copy-url" id="lg-repo-url">https://github.com/BestCine/BestCine-TV/releases/latest/download/repo.json</span>
+          <button type="button" class="copy-btn" id="copy-lg-btn">📋 Copiar link</button>
+        </div>
+        <div class="lg-grid">
+          <a id="dl-lg-ipk" class="btn shimmer-btn" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.4/com.bestcine.tv_1.1.4_arm.ipk">
+            ⬇️ Baixar para LG webOS (.ipk)
+          </a>
+          <a id="dl-lg-hc" class="btn ghost" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.4/com.bestcine.tv_1.1.4_arm-highcache.ipk">
+            ⬇️ LG webOS High-Cache (TVs com 2 GB+ RAM)
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <section class="howto glass-panel">
+      <h2 class="font-display">🔐 Como entrar na sua conta após instalar</h2>
+      <div class="steps">
+        <div class="step"><span class="step-num">1</span>Abra o <b>BestCine</b> no seu PC, celular ou Smart TV.</div>
+        <div class="step"><span class="step-num">2</span>Na TV, aponte a câmera do celular para o <b>QR Code</b> na tela e toque em <b>Autorizar TV</b>.</div>
+        <div class="step"><span class="step-num">3</span><b>Pronto!</b> Seu plano, filmes, séries, canais ao vivo e perfis carregam automaticamente.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <strong class="font-display" style="color:#fff;letter-spacing:0.05em;">BESTCINE</strong> · Software livre (GPL-3.0) ·
+      <a href="https://github.com/BestCine/BestCine" target="_blank" rel="noopener">GitHub PC/Android</a> ·
+      <a href="https://github.com/BestCine/BestCine-TV" target="_blank" rel="noopener">GitHub Smart TVs</a> ·
+      <a href="https://dsc.gg/bestcine" target="_blank" rel="noopener">Discord Oficial</a>
+    </p>
+  </footer>
+
+  <script>
+    // Toast + copiar link LG Homebrew Channel
+    var toastTimer = null;
+    document.getElementById('copy-lg-btn').addEventListener('click', function () {
+      var url = document.getElementById('lg-repo-url').textContent.trim();
+      var btn = this;
+      function done() {
+        btn.textContent = '✅ Copiado!';
+        var t = document.getElementById('toast');
+        t.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          t.classList.remove('show');
+          btn.textContent = '📋 Copiar link';
+        }, 2800);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(done).catch(done);
+      } else {
+        done();
+      }
+    });
+
+    // Atualiza todos os links automaticamente para a última Release do GitHub
+    (function () {
+      function setHref(id, assets, testFn) {
+        var el = document.getElementById(id);
+        if (!el || !assets) return;
+        for (var i = 0; i < assets.length; i++) {
+          if (testFn(assets[i].name)) {
+            el.href = assets[i].browser_download_url;
+            return;
+          }
+        }
+      }
+
+      fetch('https://api.github.com/repos/BestCine/BestCine/releases/latest')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (rel) {
+          if (!rel || !rel.assets) return;
+          if (rel.tag_name) {
+            var badge = document.getElementById('ver-badge');
+            if (badge) badge.innerHTML = '<span class="pulse-dot"></span><span>Versão ' + rel.tag_name + '</span>';
+          }
+          setHref('dl-win', rel.assets, function (n) { return /BestCine-Windows-x64-.*\.msi$/i.test(n); });
+          setHref('dl-mob-arm64', rel.assets, function (n) { return /BestCine-Android-arm64-v8a-.*\.apk$/i.test(n); });
+          setHref('dl-mob-univ', rel.assets, function (n) { return /BestCine-Android-universal-.*\.apk$/i.test(n); });
+        })
+        .catch(function () {});
+
+      fetch('https://api.github.com/repos/BestCine/BestCine-TV/releases/latest')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (rel) {
+          if (!rel || !rel.assets) return;
+          setHref('dl-tv-armv7', rel.assets, function (n) { return /android-lite-armv7\.apk$/i.test(n); });
+          setHref('dl-tv-arm64', rel.assets, function (n) { return /android-lite-arm64\.apk$/i.test(n); });
+          setHref('dl-sam-40', rel.assets, function (n) { return /NuvioTpk40\.tpk$/i.test(n); });
+          setHref('dl-sam-60', rel.assets, function (n) { return /NuvioTpk60\.tpk$/i.test(n); });
+          setHref('dl-sam-65', rel.assets, function (n) { return /NuvioTpk65\.tpk$/i.test(n); });
+          setHref('dl-sam-80', rel.assets, function (n) { return /NuvioTpk\.tpk$/i.test(n); });
+          setHref('dl-sam-wgt', rel.assets, function (n) { return /tizen\.wgt$/i.test(n); });
+          setHref('dl-lg-ipk', rel.assets, function (n) { return /_arm\.ipk$/i.test(n); });
+          setHref('dl-lg-hc', rel.assets, function (n) { return /_arm-highcache\.ipk$/i.test(n); });
+        })
+        .catch(function () {});
+    })();
+
+    // Constelação suave de partículas no fundo (mesma estética do site oficial BestCine)
+    (function () {
+      var canvas = document.getElementById('particles-bg');
+      if (!canvas || !canvas.getContext) return;
+      var ctx = canvas.getContext('2d');
+      var w, h, pts = [];
+      function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+      var count = Math.min(48, Math.max(20, Math.floor((w * h) / 36000)));
+      for (var i = 0; i < count; i++) {
+        pts.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          r: Math.random() * 1.6 + 0.6
+        });
+      }
+      function frame() {
+        ctx.clearRect(0, 0, w, h);
+        for (var i = 0; i < pts.length; i++) {
+          var p = pts[i];
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(96, 165, 250, 0.32)';
+          ctx.fill();
+          for (var j = i + 1; j < pts.length; j++) {
+            var q = pts[j];
+            var dx = p.x - q.x, dy = p.y - q.y;
+            var d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 130) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = 'rgba(59, 130, 246, ' + (0.10 * (1 - d / 130)) + ')';
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(frame);
+      }
+      if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  </script>
+</body>
+</html>
