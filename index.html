@@ -787,12 +787,12 @@
           ✅ Versão nativa 60 FPS feita para <b>controle remoto</b> + login por QR Code sem digitar senha!
         </div>
         <div class="spacer"></div>
-        <a id="dl-tv-armv7" class="btn violet shimmer-btn" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.5/BestCineTV-1.1.5-android-lite-armv7.apk">
+        <a id="dl-tv-armv7" class="btn violet shimmer-btn" href="https://github.com/BestCine/BestCine-TV/releases/latest/download/BestCineTV-android-lite-universal.apk">
           ⬇️ Baixar para TV / TV Box / Fire TV (.apk)
         </a>
         <div class="sub-link">
-          Funciona em 99% das TVs e Boxes. (Opcional 64-bit:
-          <a id="dl-tv-arm64" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.5/BestCineTV-1.1.5-android-lite-arm64.apk">arm64</a>)
+          APK único universal (32 e 64 bits) · Android TV 7+
+          <a id="dl-tv-arm64" href="https://github.com/BestCine/BestCine-TV/releases/latest/download/BestCineTV-android-lite-universal.apk.sha256" style="margin-left:6px;">SHA-256</a>
         </div>
       </section>
 
@@ -950,10 +950,7 @@
           }
           if (hasUniv) {
             setHref('dl-tv-armv7', rel.assets, function (n) { return /android-lite-universal\.apk$/i.test(n); });
-            var opt64 = document.getElementById('dl-tv-arm64');
-            if (opt64 && opt64.parentElement) {
-              opt64.parentElement.textContent = 'APK único universal (32 e 64 bits) · Android TV 7+';
-            }
+            setHref('dl-tv-arm64', rel.assets, function (n) { return /android-lite-universal\.apk\.sha256$/i.test(n); });
           } else {
             setHref('dl-tv-armv7', rel.assets, function (n) { return /android-lite-armv7\.apk$/i.test(n); });
             setHref('dl-tv-arm64', rel.assets, function (n) { return /android-lite-arm64\.apk$/i.test(n); });
