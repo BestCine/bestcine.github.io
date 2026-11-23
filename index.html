@@ -941,8 +941,23 @@
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (rel) {
           if (!rel || !rel.assets) return;
-          setHref('dl-tv-armv7', rel.assets, function (n) { return /android-lite-armv7\.apk$/i.test(n); });
-          setHref('dl-tv-arm64', rel.assets, function (n) { return /android-lite-arm64\.apk$/i.test(n); });
+          var hasUniv = false;
+          for (var k = 0; k < rel.assets.length; k++) {
+            if (/android-lite-universal\.apk$/i.test(rel.assets[k].name)) {
+              hasUniv = true;
+              break;
+            }
+          }
+          if (hasUniv) {
+            setHref('dl-tv-armv7', rel.assets, function (n) { return /android-lite-universal\.apk$/i.test(n); });
+            var opt64 = document.getElementById('dl-tv-arm64');
+            if (opt64 && opt64.parentElement) {
+              opt64.parentElement.textContent = 'APK único universal (32 e 64 bits) · Android TV 7+';
+            }
+          } else {
+            setHref('dl-tv-armv7', rel.assets, function (n) { return /android-lite-armv7\.apk$/i.test(n); });
+            setHref('dl-tv-arm64', rel.assets, function (n) { return /android-lite-arm64\.apk$/i.test(n); });
+          }
           setHref('dl-sam-40', rel.assets, function (n) { return /NuvioTpk40\.tpk$/i.test(n); });
           setHref('dl-sam-60', rel.assets, function (n) { return /NuvioTpk60\.tpk$/i.test(n); });
           setHref('dl-sam-65', rel.assets, function (n) { return /NuvioTpk65\.tpk$/i.test(n); });
