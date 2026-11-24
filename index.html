@@ -792,7 +792,6 @@
         </a>
         <div class="sub-link">
           APK único universal (32 e 64 bits) · Android TV 7+
-          <a id="dl-tv-arm64" href="https://github.com/BestCine/BestCine-TV/releases/latest/download/BestCineTV-android-lite-universal.apk.sha256" style="margin-left:6px;">SHA-256</a>
         </div>
       </section>
 
@@ -998,8 +997,23 @@
             if (badge) badge.innerHTML = '<span class="pulse-dot"></span><span>Versão ' + rel.tag_name + '</span>';
           }
           setHref('dl-win', rel.assets, function (n) { return /BestCine-Windows-x64-.*\.msi$/i.test(n); });
-          setHref('dl-mob-arm64', rel.assets, function (n) { return /BestCine-Android-arm64-v8a-.*\.apk$/i.test(n); });
-          setHref('dl-mob-univ', rel.assets, function (n) { return /BestCine-Android-universal-.*\.apk$/i.test(n); });
+          var hasMobArm64 = false;
+          for (var m = 0; m < rel.assets.length; m++) {
+            if (/BestCine-Android-arm64-v8a-.*\.apk$/i.test(rel.assets[m].name)) {
+              hasMobArm64 = true;
+              break;
+            }
+          }
+          if (hasMobArm64) {
+            setHref('dl-mob-arm64', rel.assets, function (n) { return /BestCine-Android-arm64-v8a-.*\.apk$/i.test(n); });
+            setHref('dl-mob-univ', rel.assets, function (n) { return /BestCine-Android-universal-.*\.apk$/i.test(n); });
+          } else {
+            setHref('dl-mob-arm64', rel.assets, function (n) { return /BestCine-Android-universal-.*\.apk$/i.test(n); });
+            var mobSub = document.getElementById('dl-mob-univ');
+            if (mobSub && mobSub.parentElement) {
+              mobSub.parentElement.innerHTML = 'APK único universal (32 e 64 bits) · Android 8+';
+            }
+          }
           setHref('dl-mac-arm64', rel.assets, function (n) { return /BestCine-macOS-arm64-.*\.dmg$/i.test(n); });
           setHref('dl-mac-x64', rel.assets, function (n) { return /BestCine-macOS-x86_64-.*\.dmg$/i.test(n); });
           setHref('dl-linux', rel.assets, function (n) { return /BestCine-Linux-x86_64-.*\.AppImage$/i.test(n); });
@@ -1028,10 +1042,8 @@
           }
           if (hasUniv) {
             setHref('dl-tv-armv7', rel.assets, function (n) { return /android-lite-universal\.apk$/i.test(n); });
-            setHref('dl-tv-arm64', rel.assets, function (n) { return /android-lite-universal\.apk\.sha256$/i.test(n); });
           } else {
             setHref('dl-tv-armv7', rel.assets, function (n) { return /android-lite-armv7\.apk$/i.test(n); });
-            setHref('dl-tv-arm64', rel.assets, function (n) { return /android-lite-arm64\.apk$/i.test(n); });
           }
           setHref('dl-sam-40', rel.assets, function (n) { return /NuvioTpk40\.tpk$/i.test(n); });
           setHref('dl-sam-60', rel.assets, function (n) { return /NuvioTpk60\.tpk$/i.test(n); });
