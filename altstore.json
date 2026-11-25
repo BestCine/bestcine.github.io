@@ -22,12 +22,30 @@
       "category": "entertainment",
       "versions": [
         {
+          "version": "1.1.9",
+          "buildVersion": "119",
+          "date": "2026-11-25T15:18:25Z",
+          "localizedDescription": "BestCine v1.1.9 para iOS e iPadOS — melhorias de desempenho, estabilidade e interface no cliente de mídia open-source (GPL-3.0).",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.9/BestCine-iOS-1.1.9.ipa",
+          "size": 73488244,
+          "minOSVersion": "16.1"
+        },
+        {
           "version": "1.1.8",
           "buildVersion": "118",
           "date": "2026-11-24T22:42:00Z",
           "localizedDescription": "Melhorias gerais de navegação no iOS, otimizações de interface e estabilidade de reprodução.",
           "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.8/BestCine-iOS-1.1.8.ipa",
           "size": 73178501,
+          "minOSVersion": "16.1"
+        },
+        {
+          "version": "1.1.7",
+          "buildVersion": "117",
+          "date": "2026-11-24T03:30:48Z",
+          "localizedDescription": "BestCine v1.1.7 para iOS e iPadOS — melhorias de desempenho, estabilidade e interface no cliente de mídia open-source (GPL-3.0).",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.7/BestCine-iOS-1.1.7.ipa",
+          "size": 73138661,
           "minOSVersion": "16.1"
         }
       ],
@@ -41,10 +59,10 @@
   ],
   "news": [
     {
-      "title": "BestCine v1.1.8 disponível",
-      "identifier": "bestcine-release-1.1.8",
+      "title": "BestCine v1.1.9 disponível",
+      "identifier": "bestcine-release-1.1.9",
       "caption": "Atualização com melhorias de navegação, desempenho e estabilidade no iOS.",
-      "date": "2026-11-24T22:42:00Z",
+      "date": "2026-11-25T15:18:25Z",
       "tintColor": "#2563EB",
       "appID": "com.bestcine.app",
       "notify": false
