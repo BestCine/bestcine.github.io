@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BESTCINE — Central Oficial de Downloads</title>
-  <meta name="description" content="Baixe o aplicativo oficial do BestCine para Windows PC, Celular Android, Mi Box, TV Box, Fire TV, Google TV, Smart TV Samsung e Smart TV LG." />
+  <meta name="description" content="Baixe os aplicativos open-source (GPL-3.0) do BestCine para Windows PC, macOS, Linux, Celular Android, iPhone/iPad, Mi Box, TV Box, Fire TV, Google TV, Smart TV Samsung e Smart TV LG." />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -698,7 +698,7 @@
     <div class="nav-actions">
       <span class="ver-pill" id="ver-badge">
         <span class="pulse-dot"></span>
-        <span>Versão v1.1.7</span>
+        <span>Versão v1.1.8</span>
       </span>
       <a class="discord-pill" href="https://dsc.gg/bestcine" target="_blank" rel="noopener noreferrer">
         <span class="discord-circle">
@@ -742,7 +742,7 @@
           Aplicativo oficial para Windows 64-bit com player nativo, Picture-in-Picture, suporte a legendas e atualização automática.
         </p>
         <div class="spacer"></div>
-        <a id="dl-win" class="btn shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.7/BestCine-Windows-x64-1.1.7.msi">
+        <a id="dl-win" class="btn shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.8/BestCine-Windows-x64-1.1.8.msi">
           ⬇️ Baixar para Windows (.msi)
         </a>
         <div class="sub-link">Abra o arquivo baixado e clique em <b>Instalar</b>.</div>
@@ -763,12 +763,11 @@
           ⚠️ NÃO instale esta versão em Mi Box, TV Box, Fire TV ou Google TV — use o botão de TV ao lado!
         </div>
         <div class="spacer"></div>
-        <a id="dl-mob-arm64" class="btn green shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.7/BestCine-Android-arm64-v8a-1.1.7.apk">
+        <a id="dl-mob-arm64" class="btn green shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.8/BestCine-Android-universal-1.1.8.apk">
           ⬇️ Baixar para Celular Android (.apk)
         </a>
         <div class="sub-link">
-          Celular antigo e deu erro ao instalar?
-          <a id="dl-mob-univ" href="https://github.com/BestCine/BestCine/releases/download/v1.1.7/BestCine-Android-universal-1.1.7.apk">Baixar APK Universal</a>
+          <span id="dl-mob-univ">APK único universal (32 e 64 bits) · Android 8+</span>
         </div>
       </section>
 
@@ -784,7 +783,7 @@
           </div>
         </div>
         <div class="alert success">
-          ✅ Versão nativa 60 FPS feita para <b>controle remoto</b> + login por QR Code sem digitar senha!
+          ✅ Versão nativa 60 FPS para <b>controle remoto</b> · Compatível com <b>VoiceView / TalkBack</b> + login por QR Code!
         </div>
         <div class="spacer"></div>
         <a id="dl-tv-armv7" class="btn violet shimmer-btn" href="https://github.com/BestCine/BestCine-TV/releases/latest/download/BestCineTV-android-lite-universal.apk">
@@ -810,12 +809,12 @@
           Aplicativo nativo para macOS com player acelerado por hardware, suporte a legendas e sincronização com sua conta.
         </p>
         <div class="spacer"></div>
-        <a id="dl-mac-arm64" class="btn shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.7/BestCine-macOS-arm64-1.1.7.dmg">
+        <a id="dl-mac-arm64" class="btn shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.8/BestCine-macOS-arm64-1.1.8.dmg">
           ⬇️ Baixar para Mac Apple Silicon (.dmg)
         </a>
         <div class="sub-link">
           Mac mais antigo (Intel)?
-          <a id="dl-mac-x64" href="https://github.com/BestCine/BestCine/releases/download/v1.1.7/BestCine-macOS-x86_64-1.1.7.dmg">Baixar macOS Intel (.dmg)</a>
+          <a id="dl-mac-x64" href="https://github.com/BestCine/BestCine/releases/download/v1.1.8/BestCine-macOS-x86_64-1.1.8.dmg">Baixar macOS Intel (.dmg)</a>
         </div>
       </section>
 
@@ -834,14 +833,14 @@
           Pacote universal <b>AppImage</b> portátil: basta marcar como executável e abrir sem precisar instalar dependências extras.
         </p>
         <div class="spacer"></div>
-        <a id="dl-linux" class="btn green shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.7/BestCine-Linux-x86_64-1.1.7.AppImage">
+        <a id="dl-linux" class="btn green shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.8/BestCine-Linux-x86_64-1.1.8.AppImage">
           ⬇️ Baixar para Linux (.AppImage)
         </a>
         <div class="sub-link">Compatível com todas as distribuições Linux 64-bit.</div>
       </section>
 
-      <!-- 3D. IOS (EXIBIDO AUTOMATICAMENTE QUANDO O .IPA ESTIVER PUBLICADO) -->
-      <section class="card glass-panel" id="card-ios" style="display:none;">
+      <!-- 3D. IOS -->
+      <section class="card glass-panel" id="card-ios">
         <div class="card-top">
           <div class="icon-badge violet">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
@@ -852,10 +851,10 @@
           </div>
         </div>
         <p class="desc">
-          Instale no iPhone ou iPad usando <b>SideStore</b>, <b>AltStore</b>, <b>Sideloadly</b> ou <b>TrollStore</b>.
+          Instale no iPhone ou iPad pelo PC via <b>Sideloadly</b> (mais fácil), <b>SideStore</b>, <b>AltStore</b> (com AltServer aberto no PC) ou <b>TrollStore</b>.
         </p>
         <div class="spacer"></div>
-        <a id="dl-ios" class="btn violet shimmer-btn" href="https://github.com/BestCine/BestCine/releases/latest">
+        <a id="dl-ios" class="btn violet shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.8/BestCine-iOS-1.1.8.ipa">
           ⬇️ Baixar para iOS (.ipa)
         </a>
         <div class="sub-link">Requer iOS / iPadOS 16.1 ou superior.</div>
@@ -876,22 +875,22 @@
           ⚠️ ATENÇÃO: NÃO olhe o ano em que você comprou a TV! Veja as <b>LETRAS DO MODELO</b> na etiqueta atrás da TV (ou <i>Configurações › Suporte › Sobre esta TV</i>). Exemplo: <code>UN55<b>AU</b>8000</code> → clique em <b>AU</b>:
         </div>
         <div class="samsung-grid">
-          <a id="dl-sam-40" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.7/BestCineTV-1.1.7-NuvioTpk40.tpk">
+          <a id="dl-sam-40" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.8/BestCineTV-1.1.8-NuvioTpk40.tpk">
             <span class="sam-title">⬇️ Modelos NU / RU / TU</span>
             <span class="sam-models">Ex.: NU7100, RU7100, TU7000, TU8000</span>
             <span class="sam-meta">Tizen 4.0 – 5.5 · Linha 2018–2020</span>
           </a>
-          <a id="dl-sam-60" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.7/BestCineTV-1.1.7-NuvioTpk60.tpk">
+          <a id="dl-sam-60" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.8/BestCineTV-1.1.8-NuvioTpk60.tpk">
             <span class="sam-title">⬇️ Modelos AU / Q60A–Q80A</span>
             <span class="sam-models">Ex.: AU7700, AU8000, Q60A, Q70A</span>
             <span class="sam-meta">Tizen 6.0 · Linha 2021</span>
           </a>
-          <a id="dl-sam-65" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.7/BestCineTV-1.1.7-NuvioTpk65.tpk">
+          <a id="dl-sam-65" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.8/BestCineTV-1.1.8-NuvioTpk65.tpk">
             <span class="sam-title">⬇️ Modelos BU / CU / Q60B–C</span>
             <span class="sam-models">Ex.: BU8000, CU7700, CU8000</span>
             <span class="sam-meta">Tizen 6.5 – 7.0 · Linha 2022–2023</span>
           </a>
-          <a id="dl-sam-80" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.7/BestCineTV-1.1.7-NuvioTpk.tpk">
+          <a id="dl-sam-80" class="sam-tile" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.8/BestCineTV-1.1.8-NuvioTpk.tpk">
             <span class="sam-title">⬇️ Modelos DU / U / 2024+</span>
             <span class="sam-models">Ex.: DU7700, DU8000, U8500F, Q60D, S90D</span>
             <span class="sam-meta">Tizen 8.0 – 9.0 · Linha 2024+</span>
@@ -900,7 +899,7 @@
         <div class="sub-link">
           Instale com o <a href="https://github.com/Apps2Samsung/Apps2Samsung" target="_blank" rel="noopener">Apps2Samsung</a> ·
           Se aparecer <code>TypeLoadException</code>, basta escolher a letra certa acima ·
-          <a id="dl-sam-wgt" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.7/BestCineTV-1.1.7-tizen.wgt">Alternativa WebAssembly (.wgt)</a>
+          <a id="dl-sam-wgt" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.8/BestCineTV-1.1.8-tizen.wgt">Alternativa WebAssembly (.wgt)</a>
         </div>
       </section>
 
@@ -923,10 +922,10 @@
           <button type="button" class="copy-btn" id="copy-lg-btn">📋 Copiar link</button>
         </div>
         <div class="lg-grid">
-          <a id="dl-lg-ipk" class="btn shimmer-btn" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.7/com.bestcine.tv_1.1.7_arm.ipk">
+          <a id="dl-lg-ipk" class="btn shimmer-btn" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.8/com.bestcine.tv_1.1.8_arm.ipk">
             ⬇️ Baixar para LG webOS (.ipk)
           </a>
-          <a id="dl-lg-hc" class="btn ghost" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.7/com.bestcine.tv_1.1.7_arm-highcache.ipk">
+          <a id="dl-lg-hc" class="btn ghost" href="https://github.com/BestCine/BestCine-TV/releases/download/v1.1.8/com.bestcine.tv_1.1.8_arm-highcache.ipk">
             ⬇️ LG webOS High-Cache (TVs com 2 GB+ RAM)
           </a>
         </div>
@@ -941,14 +940,63 @@
         <div class="step"><span class="step-num">3</span><b>Pronto!</b> Sua conta, preferências e perfis sincronizam automaticamente.</div>
       </div>
     </section>
+
+    <section class="howto glass-panel" id="creditos" style="margin-top:18px;">
+      <h2 class="font-display">🙏 Créditos Open-Source e Licença (GPL-3.0)</h2>
+      <p class="desc" style="margin-bottom:14px;">
+        Os aplicativos <b>BestCine</b> e <b>BestCine TV</b> são projetos independentes, gratuitos e de código aberto distribuídos sob a licença
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;"><b>GNU General Public License v3.0 (GPL-3.0)</b></a>,
+        construídos como forks modificados com base no excelente trabalho da comunidade open-source abaixo:
+      </p>
+      <div class="steps">
+        <div class="step">
+          <strong style="color:#fff;display:block;margin-bottom:6px;">💻 BestCine (PC, Mac, Linux, Android &amp; iOS)</strong>
+          Baseado no projeto open-source
+          <a href="https://github.com/NuvioMedia" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;"><b>Nuvio (NuvioMedia)</b></a>
+          (<a href="https://github.com/NuvioMedia/NuvioDesktop" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;">NuvioDesktop</a> /
+          <a href="https://github.com/NuvioMedia/NuvioMobile" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;">NuvioMobile</a>).
+          Créditos ao autor <a href="https://github.com/Tapframe" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;"><b>Tapframe</b></a> e a todos os contribuidores da comunidade NuvioMedia.
+        </div>
+        <div class="step">
+          <strong style="color:#fff;display:block;margin-bottom:6px;">📺 BestCine TV (LG webOS, Samsung Tizen, Android TV &amp; Fire TV)</strong>
+          Baseado no projeto open-source em C / SDL2 / OpenGL ES 2
+          <a href="https://github.com/iqui27/nuvio-native-legacy" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;"><b>iqui27/nuvio-native-legacy</b></a>
+          e nos conceitos visuais de <a href="https://github.com/NuvioMedia" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;"><b>NuvioMedia</b></a> /
+          <a href="https://github.com/Tapframe" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;"><b>Tapframe</b></a>.
+        </div>
+        <div class="step">
+          <strong style="color:#fff;display:block;margin-bottom:6px;">🛠️ Bibliotecas e Tecnologias</strong>
+          <a href="https://mpv.io/" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;">libmpv / mpv</a>,
+          <a href="https://ffmpeg.org/" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;">FFmpeg</a> (LGPL 2.1+),
+          <a href="https://github.com/androidx/media" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;">AndroidX Media3 (ExoPlayer)</a>,
+          <a href="https://www.libsdl.org/" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;">SDL2</a>,
+          <a href="https://www.jetbrains.com/compose-multiplatform/" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;">Compose Multiplatform</a> e
+          <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;">Lucide Icons</a> (ISC).
+        </div>
+      </div>
+      <p style="margin-top:14px;font-size:0.8rem;color:#94a3b8;line-height:1.55;">
+        <b>Transparência e Aviso Legal:</b> o código-fonte completo de ambos os aplicativos permanece público sob GPL-3.0 em
+        <a href="https://github.com/BestCine/BestCine" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;">BestCine/BestCine</a> e
+        <a href="https://github.com/BestCine/BestCine-TV" target="_blank" rel="noopener noreferrer" style="color:#60a5fa;">BestCine/BestCine-TV</a>.
+        Estes aplicativos atuam exclusivamente como players/clientes multimídia configuráveis pelo usuário e não hospedam, armazenam ou distribuem qualquer conteúdo de mídia.
+        Projeto independente, sem afiliação com <b>iqui27</b>, <b>NuvioMedia</b>, <b>Tapframe</b>, LG, Samsung, Apple ou Google.
+      </p>
+    </section>
   </main>
 
   <footer>
     <p>
       <strong class="font-display" style="color:#fff;letter-spacing:0.05em;">BESTCINE</strong> · Software livre (GPL-3.0) ·
-      <a href="https://github.com/BestCine/BestCine" target="_blank" rel="noopener">GitHub PC/Android</a> ·
+      <a href="https://github.com/BestCine/BestCine" target="_blank" rel="noopener">GitHub PC/Mobile</a> ·
       <a href="https://github.com/BestCine/BestCine-TV" target="_blank" rel="noopener">GitHub Smart TVs</a> ·
+      <a href="#creditos">Créditos Open-Source</a> ·
       <a href="https://dsc.gg/bestcine" target="_blank" rel="noopener">Discord Oficial</a>
+    </p>
+    <p style="margin-top:6px;font-size:0.76rem;color:#64748b;">
+      Créditos upstream:
+      <a href="https://github.com/iqui27/nuvio-native-legacy" target="_blank" rel="noopener">iqui27/nuvio-native-legacy</a> ·
+      <a href="https://github.com/NuvioMedia" target="_blank" rel="noopener">NuvioMedia</a> ·
+      <a href="https://github.com/Tapframe" target="_blank" rel="noopener">Tapframe</a>
     </p>
   </footer>
 
