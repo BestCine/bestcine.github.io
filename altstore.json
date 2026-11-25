@@ -22,6 +22,15 @@
       "category": "entertainment",
       "versions": [
         {
+          "version": "1.1.10",
+          "buildVersion": "120",
+          "date": "2026-11-25T21:49:01Z",
+          "localizedDescription": "BestCine v1.1.10 para iOS e iPadOS — melhorias de desempenho, estabilidade e interface no cliente de mídia open-source (GPL-3.0).",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.10/BestCine-iOS-1.1.10.ipa",
+          "size": 73495050,
+          "minOSVersion": "16.1"
+        },
+        {
           "version": "1.1.9",
           "buildVersion": "119",
           "date": "2026-11-25T15:18:25Z",
@@ -59,10 +68,10 @@
   ],
   "news": [
     {
-      "title": "BestCine v1.1.9 disponível",
-      "identifier": "bestcine-release-1.1.9",
+      "title": "BestCine v1.1.10 disponível",
+      "identifier": "bestcine-release-1.1.10",
       "caption": "Atualização com melhorias de navegação, desempenho e estabilidade no iOS.",
-      "date": "2026-11-25T15:18:25Z",
+      "date": "2026-11-25T21:49:01Z",
       "tintColor": "#2563EB",
       "appID": "com.bestcine.app",
       "notify": false
