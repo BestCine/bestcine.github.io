@@ -1,0 +1,53 @@
+{
+  "name": "BestCine",
+  "identifier": "com.bestcine.source",
+  "subtitle": "Fonte oficial de lançamentos open-source do BestCine para iOS e iPadOS.",
+  "description": "Repositório oficial AltStore / SideStore do BestCine, cliente de mídia open-source (GPL-3.0) configurável pelo usuário, derivado do projeto Nuvio (Tapframe e contribuidores).",
+  "iconURL": "https://bestcine.github.io/logo.png",
+  "headerURL": "https://bestcine.github.io/logo.png",
+  "website": "https://bestcine.github.io",
+  "tintColor": "#2563EB",
+  "featuredApps": [
+    "com.bestcine.app"
+  ],
+  "apps": [
+    {
+      "name": "BestCine",
+      "bundleIdentifier": "com.bestcine.app",
+      "developerName": "BestCine",
+      "subtitle": "Cliente de mídia open-source configurável para iPhone e iPad",
+      "localizedDescription": "BestCine é um aplicativo reprodutor e cliente de mídia open-source (licença GPL-3.0) configurável pelo usuário, derivado do projeto Nuvio (Tapframe e contribuidores). Suporta reprodução nativa via libmpv, organização de biblioteca, catálogo configurável e múltiplos perfis.",
+      "iconURL": "https://bestcine.github.io/logo.png",
+      "tintColor": "#2563EB",
+      "category": "entertainment",
+      "versions": [
+        {
+          "version": "1.1.8",
+          "buildVersion": "118",
+          "date": "2026-11-24T22:42:00Z",
+          "localizedDescription": "Melhorias gerais de navegação no iOS, otimizações de interface e estabilidade de reprodução.",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.8/BestCine-iOS-1.1.8.ipa",
+          "size": 73178501,
+          "minOSVersion": "16.1"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "Utilizado para descoberta e conexão com servidores de mídia locais configurados pelo usuário."
+        }
+      }
+    }
+  ],
+  "news": [
+    {
+      "title": "BestCine v1.1.8 disponível",
+      "identifier": "bestcine-release-1.1.8",
+      "caption": "Atualização com melhorias de navegação, desempenho e estabilidade no iOS.",
+      "date": "2026-11-24T22:42:00Z",
+      "tintColor": "#2563EB",
+      "appID": "com.bestcine.app",
+      "notify": false
+    }
+  ]
+}
