@@ -1,0 +1,134 @@
+name: Sync AltStore Source (iOS)
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-altstore-source
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout bestcine.github.io
+        uses: actions/checkout@v4
+
+      - name: Update altstore.json from latest BestCine releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - << 'PY'
+          import json
+          import os
+          import re
+          import urllib.request
+
+          API_URL = "https://api.github.com/repos/BestCine/BestCine/releases?per_page=10"
+          ALTSTORE_PATH = "altstore.json"
+
+          headers = {
+              "Accept": "application/vnd.github+json",
+              "User-Agent": "bestcine-altstore-sync",
+          }
+          token = os.environ.get("GH_TOKEN", "").strip()
+          if token:
+              headers["Authorization"] = f"Bearer {token}"
+
+          req = urllib.request.Request(API_URL, headers=headers)
+          with urllib.request.urlopen(req, timeout=30) as resp:
+              releases = json.loads(resp.read().decode("utf-8"))
+
+          with open(ALTSTORE_PATH, "r", encoding="utf-8") as f:
+              current = json.load(f)
+
+          existing_desc = {}
+          for app in current.get("apps", []):
+              if app.get("bundleIdentifier") == "com.bestcine.app":
+                  for v in app.get("versions", []):
+                      if v.get("version") and v.get("localizedDescription"):
+                          existing_desc[v["version"]] = v["localizedDescription"]
+
+          versions = []
+          for rel in releases:
+              if rel.get("draft") or rel.get("prerelease"):
+                  continue
+              tag = (rel.get("tag_name") or "").strip()
+              ver = tag.lstrip("vV")
+              if not re.match(r"^\d+\.\d+\.\d+$", ver):
+                  continue
+              ipa = None
+              for asset in rel.get("assets", []):
+                  name = asset.get("name") or ""
+                  if re.match(r"^BestCine-iOS-.*\.ipa$", name, re.IGNORECASE):
+                      ipa = asset
+                      break
+              if not ipa:
+                  continue
+
+              parts = [int(p) for p in ver.split(".")]
+              build_version = str(parts[0] * 100 + parts[1] * 10 + parts[2])
+              date_iso = (rel.get("published_at") or rel.get("created_at") or "").strip()
+              desc = existing_desc.get(
+                  ver,
+                  f"BestCine v{ver} para iOS e iPadOS — melhorias de desempenho, estabilidade e interface no cliente de mídia open-source (GPL-3.0).",
+              )
+
+              versions.append({
+                  "version": ver,
+                  "buildVersion": build_version,
+                  "date": date_iso,
+                  "localizedDescription": desc,
+                  "downloadURL": ipa["browser_download_url"],
+                  "size": int(ipa["size"]),
+                  "minOSVersion": "16.1",
+              })
+              if len(versions) >= 5:
+                  break
+
+          if not versions:
+              print("No published iOS .ipa releases found; keeping existing altstore.json.")
+              raise SystemExit(0)
+
+          latest = versions[0]
+          current["apps"][0]["versions"] = versions
+          current["news"] = [
+              {
+                  "title": f"BestCine v{latest['version']} disponível",
+                  "identifier": f"bestcine-release-{latest['version']}",
+                  "caption": "Atualização com melhorias de navegação, desempenho e estabilidade no iOS.",
+                  "date": latest["date"],
+                  "tintColor": "#2563EB",
+                  "appID": "com.bestcine.app",
+                  "notify": False,
+              }
+          ]
+
+          new_text = json.dumps(current, indent=2, ensure_ascii=False) + "\n"
+          with open(ALTSTORE_PATH, "r", encoding="utf-8") as f:
+              old_text = f.read()
+
+          if new_text == old_text:
+              print(f"altstore.json already up to date (latest: v{latest['version']}).")
+          else:
+              with open(ALTSTORE_PATH, "w", encoding="utf-8", newline="\n") as f:
+                  f.write(new_text)
+              print(f"Updated altstore.json to v{latest['version']} ({len(versions)} version(s)).")
+          PY
+
+      - name: Commit and push if updated
+        run: |
+          if git diff --quiet altstore.json; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add altstore.json
+          git commit -m "Auto-update altstore.json from latest BestCine iOS release"
+          git push origin main
