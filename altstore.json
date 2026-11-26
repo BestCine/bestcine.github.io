@@ -22,6 +22,15 @@
                      "category":  "entertainment",
                      "versions":  [
                                       {
+                                          "version":  "1.1.13",
+                                          "buildVersion":  "123",
+                                          "date":  "2026-11-26T06:37:00Z",
+                                          "localizedDescription":  "BestCine v1.1.13 para iOS e iPadOS — assinatura criptográfica HMAC-SHA256 para rotas dedicadas do cliente oficial e metadados/EPG em endpoint dedicado (GPL-3.0).",
+                                          "downloadURL":  "https://github.com/BestCine/BestCine/releases/download/v1.1.13/BestCine-iOS-1.1.13.ipa",
+                                          "size":  73570507,
+                                          "minOSVersion":  "16.1"
+                                      },
+                                      {
                                           "version":  "1.1.12",
                                           "buildVersion":  "122",
                                           "date":  "2026-11-26T04:42:00Z",
