@@ -1,109 +1,89 @@
 {
-    "name":  "BestCine",
-    "identifier":  "com.bestcine.source",
-    "subtitle":  "Fonte oficial de lançamentos open-source do BestCine para iOS e iPadOS.",
-    "description":  "Repositório oficial AltStore / SideStore do BestCine, cliente de mídia open-source (GPL-3.0) configurável pelo usuário, derivado do projeto Nuvio (Tapframe e contribuidores).",
-    "iconURL":  "https://bestcine.github.io/logo.png",
-    "headerURL":  "https://bestcine.github.io/logo.png",
-    "website":  "https://bestcine.github.io",
-    "tintColor":  "#2563EB",
-    "featuredApps":  [
-                         "com.bestcine.app"
-                     ],
-    "apps":  [
-                 {
-                     "name":  "BestCine",
-                     "bundleIdentifier":  "com.bestcine.app",
-                     "developerName":  "BestCine",
-                     "subtitle":  "Cliente de mídia open-source configurável para iPhone e iPad",
-                     "localizedDescription":  "BestCine é um aplicativo reprodutor e cliente de mídia open-source (licença GPL-3.0) configurável pelo usuário, derivado do projeto Nuvio (Tapframe e contribuidores). Suporta reprodução nativa via libmpv, organização de biblioteca, catálogo configurável e múltiplos perfis.",
-                     "iconURL":  "https://bestcine.github.io/logo.png",
-                     "tintColor":  "#2563EB",
-                     "category":  "entertainment",
-                     "versions":  [
-                                      {
-                                          "version":  "1.1.13",
-                                          "buildVersion":  "123",
-                                          "date":  "2026-11-26T06:37:00Z",
-                                          "localizedDescription":  "BestCine v1.1.13 para iOS e iPadOS — assinatura criptográfica HMAC-SHA256 para rotas dedicadas do cliente oficial e metadados/EPG em endpoint dedicado (GPL-3.0).",
-                                          "downloadURL":  "https://github.com/BestCine/BestCine/releases/download/v1.1.13/BestCine-iOS-1.1.13.ipa",
-                                          "size":  73570507,
-                                          "minOSVersion":  "16.1"
-                                      },
-                                      {
-                                          "version":  "1.1.12",
-                                          "buildVersion":  "122",
-                                          "date":  "2026-11-26T04:42:00Z",
-                                          "localizedDescription":  "BestCine v1.1.12 para iOS e iPadOS — aba Busca -\u003e Descobrir 100% nativa (Filmes, Séries, gêneros e plataformas), Canais de TV na rota dedicada BestCine e interface de Cast mais limpa em dispositivos móveis (GPL-3.0).",
-                                          "downloadURL":  "https://github.com/BestCine/BestCine/releases/download/v1.1.12/BestCine-iOS-1.1.12.ipa",
-                                          "size":  73564255,
-                                          "minOSVersion":  "16.1"
-                                      },
-                                      {
-                                          "version":  "1.1.11",
-                                          "buildVersion":  "121",
-                                          "date":  "2026-11-26T02:23:00Z",
-                                          "localizedDescription":  "BestCine v1.1.11 para iOS e iPadOS — correção de navegação nos Ajustes, descoberta DLNA aprimorada (unicast/LAN para SideStore/AltStore), orientação retrato + barra de progresso no Cast, menu Catálogos destacado e perfil principal automático (GPL-3.0).",
-                                          "downloadURL":  "https://github.com/BestCine/BestCine/releases/download/v1.1.11/BestCine-iOS-1.1.11.ipa",
-                                          "size":  73552943,
-                                          "minOSVersion":  "16.1"
-                                      },
-                                      {
-                                          "version":  "1.1.10",
-                                          "buildVersion":  "120",
-                                          "date":  "2026-11-25T21:49:01Z",
-                                          "localizedDescription":  "BestCine v1.1.10 para iOS e iPadOS — melhorias de desempenho, estabilidade e interface no cliente de mídia open-source (GPL-3.0).",
-                                          "downloadURL":  "https://github.com/BestCine/BestCine/releases/download/v1.1.10/BestCine-iOS-1.1.10.ipa",
-                                          "size":  73495050,
-                                          "minOSVersion":  "16.1"
-                                      },
-                                      {
-                                          "version":  "1.1.9",
-                                          "buildVersion":  "119",
-                                          "date":  "2026-11-25T15:18:25Z",
-                                          "localizedDescription":  "BestCine v1.1.9 para iOS e iPadOS — melhorias de desempenho, estabilidade e interface no cliente de mídia open-source (GPL-3.0).",
-                                          "downloadURL":  "https://github.com/BestCine/BestCine/releases/download/v1.1.9/BestCine-iOS-1.1.9.ipa",
-                                          "size":  73488244,
-                                          "minOSVersion":  "16.1"
-                                      },
-                                      {
-                                          "version":  "1.1.8",
-                                          "buildVersion":  "118",
-                                          "date":  "2026-11-24T22:42:00Z",
-                                          "localizedDescription":  "Melhorias gerais de navegação no iOS, otimizações de interface e estabilidade de reprodução.",
-                                          "downloadURL":  "https://github.com/BestCine/BestCine/releases/download/v1.1.8/BestCine-iOS-1.1.8.ipa",
-                                          "size":  73178501,
-                                          "minOSVersion":  "16.1"
-                                      },
-                                      {
-                                          "version":  "1.1.7",
-                                          "buildVersion":  "117",
-                                          "date":  "2026-11-24T03:30:48Z",
-                                          "localizedDescription":  "BestCine v1.1.7 para iOS e iPadOS — melhorias de desempenho, estabilidade e interface no cliente de mídia open-source (GPL-3.0).",
-                                          "downloadURL":  "https://github.com/BestCine/BestCine/releases/download/v1.1.7/BestCine-iOS-1.1.7.ipa",
-                                          "size":  73138661,
-                                          "minOSVersion":  "16.1"
-                                      }
-                                  ],
-                     "appPermissions":  {
-                                            "entitlements":  [
-
-                                                             ],
-                                            "privacy":  {
-                                                            "NSLocalNetworkUsageDescription":  "Utilizado para descoberta e conexão com servidores de mídia locais configurados pelo usuário."
-                                                        }
-                                        }
-                 }
-             ],
-    "news":  [
-                 {
-                     "title":  "BestCine v1.1.10 disponível",
-                     "identifier":  "bestcine-release-1.1.10",
-                     "caption":  "Atualização com melhorias de navegação, desempenho e estabilidade no iOS.",
-                     "date":  "2026-11-25T21:49:01Z",
-                     "tintColor":  "#2563EB",
-                     "appID":  "com.bestcine.app",
-                     "notify":  false
-                 }
-             ]
+  "name": "BestCine",
+  "identifier": "com.bestcine.source",
+  "subtitle": "Fonte oficial de lançamentos open-source do BestCine para iOS e iPadOS.",
+  "description": "Repositório oficial AltStore / SideStore do BestCine, cliente de mídia open-source (GPL-3.0) configurável pelo usuário, derivado do projeto Nuvio (Tapframe e contribuidores).",
+  "iconURL": "https://bestcine.github.io/logo.png",
+  "headerURL": "https://bestcine.github.io/logo.png",
+  "website": "https://bestcine.github.io",
+  "tintColor": "#2563EB",
+  "featuredApps": [
+    "com.bestcine.app"
+  ],
+  "apps": [
+    {
+      "name": "BestCine",
+      "bundleIdentifier": "com.bestcine.app",
+      "developerName": "BestCine",
+      "subtitle": "Cliente de mídia open-source configurável para iPhone e iPad",
+      "localizedDescription": "BestCine é um aplicativo reprodutor e cliente de mídia open-source (licença GPL-3.0) configurável pelo usuário, derivado do projeto Nuvio (Tapframe e contribuidores). Suporta reprodução nativa via libmpv, organização de biblioteca, catálogo configurável e múltiplos perfis.",
+      "iconURL": "https://bestcine.github.io/logo.png",
+      "tintColor": "#2563EB",
+      "category": "entertainment",
+      "versions": [
+        {
+          "version": "1.1.13",
+          "buildVersion": "123",
+          "date": "2026-11-26T06:37:00Z",
+          "localizedDescription": "BestCine v1.1.13 para iOS e iPadOS — assinatura criptográfica HMAC-SHA256 para rotas dedicadas do cliente oficial e metadados/EPG em endpoint dedicado (GPL-3.0).",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.13/BestCine-iOS-1.1.13.ipa",
+          "size": 73570507,
+          "minOSVersion": "16.1"
+        },
+        {
+          "version": "1.1.12",
+          "buildVersion": "122",
+          "date": "2026-11-26T04:41:33Z",
+          "localizedDescription": "BestCine v1.1.12 para iOS e iPadOS — aba Busca -> Descobrir 100% nativa (Filmes, Séries, gêneros e plataformas), Canais de TV na rota dedicada BestCine e interface de Cast mais limpa em dispositivos móveis (GPL-3.0).",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.12/BestCine-iOS-1.1.12.ipa",
+          "size": 73564255,
+          "minOSVersion": "16.1"
+        },
+        {
+          "version": "1.1.11",
+          "buildVersion": "121",
+          "date": "2026-11-26T02:23:06Z",
+          "localizedDescription": "BestCine v1.1.11 para iOS e iPadOS — correção de navegação nos Ajustes, descoberta DLNA aprimorada (unicast/LAN para SideStore/AltStore), orientação retrato + barra de progresso no Cast, menu Catálogos destacado e perfil principal automático (GPL-3.0).",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.11/BestCine-iOS-1.1.11.ipa",
+          "size": 73552943,
+          "minOSVersion": "16.1"
+        },
+        {
+          "version": "1.1.10",
+          "buildVersion": "120",
+          "date": "2026-11-25T21:49:01Z",
+          "localizedDescription": "BestCine v1.1.10 para iOS e iPadOS — melhorias de desempenho, estabilidade e interface no cliente de mídia open-source (GPL-3.0).",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.10/BestCine-iOS-1.1.10.ipa",
+          "size": 73495050,
+          "minOSVersion": "16.1"
+        },
+        {
+          "version": "1.1.9",
+          "buildVersion": "119",
+          "date": "2026-11-25T15:18:25Z",
+          "localizedDescription": "BestCine v1.1.9 para iOS e iPadOS — melhorias de desempenho, estabilidade e interface no cliente de mídia open-source (GPL-3.0).",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.9/BestCine-iOS-1.1.9.ipa",
+          "size": 73488244,
+          "minOSVersion": "16.1"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "Utilizado para descoberta e conexão com servidores de mídia locais configurados pelo usuário."
+        }
+      }
+    }
+  ],
+  "news": [
+    {
+      "title": "BestCine v1.1.13 disponível",
+      "identifier": "bestcine-release-1.1.13",
+      "caption": "Atualização com melhorias de navegação, desempenho e estabilidade no iOS.",
+      "date": "2026-11-26T06:37:00Z",
+      "tintColor": "#2563EB",
+      "appID": "com.bestcine.app",
+      "notify": false
+    }
+  ]
 }
