@@ -814,13 +814,23 @@
         <p class="desc">
           Aplicativo nativo para macOS com player acelerado por hardware, suporte a legendas e sincronização com sua conta.
         </p>
+        <div class="alert" style="background: rgba(59, 130, 246, 0.10); border-color: rgba(96, 165, 250, 0.30); color: #dbeafe; font-size: 0.78rem; line-height: 1.45;">
+          🍎 <b>Aviso do macOS ao abrir pela 1ª vez?</b> (padrão da Apple para apps open-source fora da App Store): arraste para <b>Aplicativos</b>, tente abrir, clique em <b>OK</b> (não mova para a Lixeira) e vá em <b>Ajustes do Sistema › Privacidade e Segurança › Abrir Mesmo Assim</b>.
+          <details style="margin-top: 6px; cursor: pointer;">
+            <summary style="color: #93c5fd; font-weight: 600;">Ou liberar em 1 comando no Terminal</summary>
+            <div style="margin-top: 6px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+              <code style="font-size: 0.72rem; color: #fff; background: rgba(0,0,0,0.45); padding: 3px 7px; border-radius: 6px;">xattr -cr /Applications/BestCine.app</code>
+              <button type="button" onclick="navigator.clipboard && navigator.clipboard.writeText('xattr -cr /Applications/BestCine.app'); this.textContent='Copiado!'; setTimeout(() => this.textContent='Copiar', 1600);" style="cursor: pointer; border: 1px solid rgba(96, 165, 250, 0.45); background: rgba(59, 130, 246, 0.22); color: #dbeafe; border-radius: 6px; padding: 2px 8px; font-size: 0.72rem; font-weight: 700;">Copiar</button>
+            </div>
+          </details>
+        </div>
         <div class="spacer"></div>
-        <a id="dl-mac-arm64" class="btn shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.8/BestCine-macOS-arm64-1.1.8.dmg">
+        <a id="dl-mac-arm64" class="btn shimmer-btn" href="https://github.com/BestCine/BestCine/releases/download/v1.1.13/BestCine-macOS-arm64-1.1.13.dmg">
           ⬇️ Baixar para Mac Apple Silicon (.dmg)
         </a>
         <div class="sub-link">
           Mac mais antigo (Intel)?
-          <a id="dl-mac-x64" href="https://github.com/BestCine/BestCine/releases/download/v1.1.8/BestCine-macOS-x86_64-1.1.8.dmg">Baixar macOS Intel (.dmg)</a>
+          <a id="dl-mac-x64" href="https://github.com/BestCine/BestCine/releases/download/v1.1.13/BestCine-macOS-x86_64-1.1.13.dmg">Baixar macOS Intel (.dmg)</a>
         </div>
       </section>
 
