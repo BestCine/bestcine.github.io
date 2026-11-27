@@ -22,6 +22,15 @@
       "category": "entertainment",
       "versions": [
         {
+          "version": "1.1.14",
+          "buildVersion": "124",
+          "date": "2026-11-27T02:25:00Z",
+          "localizedDescription": "BestCine v1.1.14 para iOS e iPadOS — nova barra inferior BestCine, selos nativos nos pôsteres, catálogos de Lançamentos, gestos de brilho/volume na TV ao Vivo e correção de estabilidade no Cast DLNA (GPL-3.0).",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.14/BestCine-iOS-1.1.14.ipa",
+          "size": 73662243,
+          "minOSVersion": "16.1"
+        },
+        {
           "version": "1.1.13",
           "buildVersion": "123",
           "date": "2026-11-26T06:37:00Z",
@@ -77,10 +86,10 @@
   ],
   "news": [
     {
-      "title": "BestCine v1.1.13 disponível",
-      "identifier": "bestcine-release-1.1.13",
-      "caption": "Atualização com melhorias de navegação, desempenho e estabilidade no iOS.",
-      "date": "2026-11-26T06:37:00Z",
+      "title": "BestCine v1.1.14 disponível",
+      "identifier": "bestcine-release-1.1.14",
+      "caption": "Nova barra inferior BestCine, selos nativos nos pôsteres, Lançamentos e melhorias na TV ao Vivo e no Cast DLNA.",
+      "date": "2026-11-27T02:25:00Z",
       "tintColor": "#2563EB",
       "appID": "com.bestcine.app",
       "notify": false
