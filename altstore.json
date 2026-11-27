@@ -22,6 +22,15 @@
       "category": "entertainment",
       "versions": [
         {
+          "version": "1.1.15",
+          "buildVersion": "125",
+          "date": "2026-11-27T15:13:00Z",
+          "localizedDescription": "BestCine v1.1.15 para iOS e iPadOS — correção da grade EPG e aviso de carregamento acima do menu inferior no Guia de TV e carregamento sob demanda das logos oficiais em Modo Paisagem (GPL-3.0).",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.15/BestCine-iOS-1.1.15.ipa",
+          "size": 73674919,
+          "minOSVersion": "16.1"
+        },
+        {
           "version": "1.1.14",
           "buildVersion": "124",
           "date": "2026-11-27T02:25:00Z",
@@ -86,10 +95,10 @@
   ],
   "news": [
     {
-      "title": "BestCine v1.1.14 disponível",
-      "identifier": "bestcine-release-1.1.14",
-      "caption": "Nova barra inferior BestCine, selos nativos nos pôsteres, Lançamentos e melhorias na TV ao Vivo e no Cast DLNA.",
-      "date": "2026-11-27T02:25:00Z",
+      "title": "BestCine v1.1.15 disponível",
+      "identifier": "bestcine-release-1.1.15",
+      "caption": "Correção da grade EPG no celular e logos oficiais nas capas em Modo Paisagem.",
+      "date": "2026-11-27T15:13:00Z",
       "tintColor": "#2563EB",
       "appID": "com.bestcine.app",
       "notify": false
