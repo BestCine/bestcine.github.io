@@ -22,6 +22,15 @@
       "category": "entertainment",
       "versions": [
         {
+          "version": "1.1.16",
+          "buildVersion": "126",
+          "date": "2026-11-28T01:47:24Z",
+          "localizedDescription": "BestCine v1.1.16 para iOS e iPadOS — addons externos liberados, opção para ocultar catálogos padrão na Home, Conta Nuvio opcional em Rastreamento, compatibilidade ARM ID para catálogos de anime, melhorias no player/legendas/Cast e ajustes visuais no celular (GPL-3.0).",
+          "downloadURL": "https://github.com/BestCine/BestCine/releases/download/v1.1.16/BestCine-iOS-1.1.16.ipa",
+          "size": 73775970,
+          "minOSVersion": "16.1"
+        },
+        {
           "version": "1.1.15",
           "buildVersion": "125",
           "date": "2026-11-27T15:12:18Z",
@@ -77,10 +86,10 @@
   ],
   "news": [
     {
-      "title": "BestCine v1.1.15 disponível",
-      "identifier": "bestcine-release-1.1.15",
-      "caption": "Atualização com melhorias de navegação, desempenho e estabilidade no iOS.",
-      "date": "2026-11-27T15:12:18Z",
+      "title": "BestCine v1.1.16 disponível",
+      "identifier": "bestcine-release-1.1.16",
+      "caption": "Addons externos liberados, Conta Nuvio opcional em Rastreamento, suporte ARM ID para animes e melhorias de player e interface no iOS.",
+      "date": "2026-11-28T01:47:24Z",
       "tintColor": "#2563EB",
       "appID": "com.bestcine.app",
       "notify": false
